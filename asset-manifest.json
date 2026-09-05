@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "https://ysiezar21/Lab-2_E-Commerce/static/css/main.88379248.css",
+    "main.js": "https://ysiezar21/Lab-2_E-Commerce/static/js/main.f07c1926.js",
+    "index.html": "https://ysiezar21/Lab-2_E-Commerce/index.html",
+    "main.88379248.css.map": "https://ysiezar21/Lab-2_E-Commerce/static/css/main.88379248.css.map",
+    "main.f07c1926.js.map": "https://ysiezar21/Lab-2_E-Commerce/static/js/main.f07c1926.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88379248.css",
+    "static/js/main.f07c1926.js"
+  ]
+}
