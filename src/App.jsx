@@ -79,18 +79,18 @@ const CategoryFilter = connectRefinementList(({ items, refine }) => (
 ));
 
 // ===== PRICE SLIDER CON DOBLE INTERRUPTOR =====
-const PriceSlider = connectRange(({ currentRefinement, refine }) => {
+const PriceSlider = connectRange(({ min, max, currentRefinement, refine }) => {
   const [values, setValues] = React.useState([
-    currentRefinement.min = 0,
-    currentRefinement.max = 650
+    currentRefinement.min ?? min ?? 0,
+    currentRefinement.max ?? max ?? 650
   ]);
 
   React.useEffect(() => {
     setValues([
-      currentRefinement.min = 0,
-      currentRefinement.max = 650
+      currentRefinement.min ?? min ?? 0,
+      currentRefinement.max ?? max ?? 650
     ]);
-  }, [currentRefinement.min, currentRefinement.max]);
+  }, [currentRefinement.min, currentRefinement.max, min, max]);
 
   const handleChange = (newValues) => {
     setValues(newValues);
@@ -109,13 +109,16 @@ const PriceSlider = connectRange(({ currentRefinement, refine }) => {
         className="price-slider"
         thumbClassName="price-thumb"
         trackClassName="price-track"
-        min={0}
-        max={650}
+        min={min ?? 0}
+        max={max ?? 650}
         value={values}
         onChange={handleChange}
         onAfterChange={handleAfterChange}
         pearling
         minDistance={10}
+        renderThumb={(props, state) => (
+          <div {...props} data-value={`$${state.valueNow}`} />
+        )}
       />
       <div className="price-values">
         <span className="price-min">${values[0]}</span>
@@ -124,7 +127,6 @@ const PriceSlider = connectRange(({ currentRefinement, refine }) => {
     </div>
   );
 });
-
 // 3. CUADRÍCULA DE PRODUCTOS
 const ProductGrid = connectHits(({ hits }) => (
   <div className="product-grid">
