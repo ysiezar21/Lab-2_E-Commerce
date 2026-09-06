@@ -40,6 +40,11 @@ const FiltersSidebar = () => (
     <h3> Filtros</h3>
 
     <div className="filter-group">
+      <h4> Precio</h4>
+      <PriceSlider attribute="price" />
+    </div>
+
+    <div className="filter-group">
       <h4>Marca</h4>
       <CategoryFilter attribute="brand" />
     </div>
@@ -54,10 +59,7 @@ const FiltersSidebar = () => (
       <CategoryFilter attribute="facets.color" />
     </div>
 
-    <div className="filter-group">
-      <h4> Precio</h4>
-      <PriceSlider attribute="price" />
-    </div>
+    
   </aside>
 );
 
@@ -82,13 +84,13 @@ const CategoryFilter = connectRefinementList(({ items, refine }) => (
 const PriceSlider = connectRange(({ min, max, currentRefinement, refine }) => {
   const [values, setValues] = React.useState([
     currentRefinement.min ?? min ?? 0,
-    currentRefinement.max ?? max ?? 650
+    currentRefinement.max ?? max ?? 1000
   ]);
-
+  
   React.useEffect(() => {
     setValues([
       currentRefinement.min ?? min ?? 0,
-      currentRefinement.max ?? max ?? 650
+      currentRefinement.max ?? max ?? 1000
     ]);
   }, [currentRefinement.min, currentRefinement.max, min, max]);
 
@@ -110,7 +112,7 @@ const PriceSlider = connectRange(({ min, max, currentRefinement, refine }) => {
         thumbClassName="price-thumb"
         trackClassName="price-track"
         min={min ?? 0}
-        max={max ?? 650}
+        max={max ?? 1000}
         value={values}
         onChange={handleChange}
         onAfterChange={handleAfterChange}
@@ -162,21 +164,23 @@ const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) =>
   
   const pages = [];
   const maxVisible = 5;
-  let start = Math.max(0, currentRefinement - Math.floor(maxVisible / 2));
-  let end = Math.min(nbPages, start + maxVisible);
   
-  if (end - start < maxVisible) {
-    start = Math.max(0, end - maxVisible);
+  // currentRefinement es base-1 (la primera página es 1, no 0)
+  let start = Math.max(1, currentRefinement - Math.floor(maxVisible / 2));
+  let end = Math.min(nbPages, start + maxVisible - 1);
+  
+  if (end - start + 1 < maxVisible) {
+    start = Math.max(1, end - maxVisible + 1);
   }
   
-  for (let i = start; i < end; i++) {
+  for (let i = start; i <= end; i++) {
     pages.push(
       <button
         key={i}
         onClick={() => refine(i)}
         className={i === currentRefinement ? 'active' : ''}
       >
-        {i + 1}
+        {i}
       </button>
     );
   }
@@ -184,7 +188,7 @@ const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) =>
   return (
     <div className="pagination">
       <button 
-        disabled={currentRefinement === 0} 
+        disabled={currentRefinement === 1} 
         onClick={() => refine(currentRefinement - 1)}
         className="arrow"
       >
@@ -192,7 +196,7 @@ const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) =>
       </button>
       {pages}
       <button 
-        disabled={currentRefinement === nbPages - 1} 
+        disabled={currentRefinement === nbPages} 
         onClick={() => refine(currentRefinement + 1)}
         className="arrow"
       >
@@ -201,7 +205,6 @@ const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) =>
     </div>
   );
 });
-
 // ============ APP PRINCIPAL ============
 function App() {
   return (
