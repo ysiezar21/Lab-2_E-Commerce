@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Lab-2_E-Commerce/static/css/main.edc79fb4.css",
-    "main.js": "/Lab-2_E-Commerce/static/js/main.91fe575b.js",
-    "index.html": "/Lab-2_E-Commerce/index.html",
-    "main.edc79fb4.css.map": "/Lab-2_E-Commerce/static/css/main.edc79fb4.css.map",
-    "main.91fe575b.js.map": "/Lab-2_E-Commerce/static/js/main.91fe575b.js.map"
+    "main.css": "https://ysiezar21.github.io/Lab-2_E-Commerce/static/css/main.edc79fb4.css",
+    "main.js": "https://ysiezar21.github.io/Lab-2_E-Commerce/static/js/main.70722319.js",
+    "index.html": "https://ysiezar21.github.io/Lab-2_E-Commerce/index.html",
+    "main.edc79fb4.css.map": "https://ysiezar21.github.io/Lab-2_E-Commerce/static/css/main.edc79fb4.css.map",
+    "main.70722319.js.map": "https://ysiezar21.github.io/Lab-2_E-Commerce/static/js/main.70722319.js.map"
   },
   "entrypoints": [
     "static/css/main.edc79fb4.css",
-    "static/js/main.91fe575b.js"
+    "static/js/main.70722319.js"
   ]
 }
