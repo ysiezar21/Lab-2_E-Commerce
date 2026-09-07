@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://ysiezar21/Lab-2_E-Commerce/static/css/main.88379248.css",
-    "main.js": "https://ysiezar21/Lab-2_E-Commerce/static/js/main.f07c1926.js",
-    "index.html": "https://ysiezar21/Lab-2_E-Commerce/index.html",
-    "main.88379248.css.map": "https://ysiezar21/Lab-2_E-Commerce/static/css/main.88379248.css.map",
-    "main.f07c1926.js.map": "https://ysiezar21/Lab-2_E-Commerce/static/js/main.f07c1926.js.map"
+    "main.css": "/Lab-2_E-Commerce/static/css/main.edc79fb4.css",
+    "main.js": "/Lab-2_E-Commerce/static/js/main.91fe575b.js",
+    "index.html": "/Lab-2_E-Commerce/index.html",
+    "main.edc79fb4.css.map": "/Lab-2_E-Commerce/static/css/main.edc79fb4.css.map",
+    "main.91fe575b.js.map": "/Lab-2_E-Commerce/static/js/main.91fe575b.js.map"
   },
   "entrypoints": [
-    "static/css/main.88379248.css",
-    "static/js/main.f07c1926.js"
+    "static/css/main.edc79fb4.css",
+    "static/js/main.91fe575b.js"
   ]
 }
