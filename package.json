@@ -1,7 +1,7 @@
 {
   "name": "algolia-search",
   "version": "1.0.0",
-  "homepage": "https://ysiezar21.github.io/Lab-2_E-Commerce",
+  "homepage": "https://ysiezar21/Lab-2_E-Commerce",
   "dependencies": {
     "algoliasearch": "^4.20.0",
     "react": "^18.2.0",
